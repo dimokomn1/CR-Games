@@ -1,5 +1,4 @@
-# requirements_minimal.txt
-vk-api==11.9.9
 Flask==2.3.0
-requests==2.31.0
+vkbottle>=4.0.0
 python-dotenv==1.0.0
+requests==2.31.0
