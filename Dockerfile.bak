@@ -1,9 +1,18 @@
-FROM python
+FROM python:3.9-slim
 
-WORKDIR /bot
+WORKDIR /app
 
+# Копируем зависимости
+COPY requirements.txt .
+
+# Устанавливаем зависимости
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Копируем весь код
 COPY . .
 
-RUN pip install vkbottle
+# Открываем порт
+EXPOSE 5000
 
-CMD ["python3", "main.py"]
+# Команда запуска
+CMD ["python", "main.py"]
